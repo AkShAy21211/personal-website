@@ -250,6 +250,33 @@
     }
   });
 
+
+  /*
+  Form Input Validation
+  */
+  var input = document.getElementById("name");
+
+  input.addEventListener("input", (event) => {
+    const value = event.target.value;
+    const regex = /^[a-zA-Z]+$/i;
+  
+    if (!regex.test(value)) {
+      event.target.value = value.replace(/[^a-zA-Z]/g, "");
+    }
+  });
+
+
+  var input = document.getElementById("email");
+
+input.addEventListener("input", (event) => {
+  const value = event.target.value;
+  const regex = /^[a-zA-Z0-9]+@gmail\.com$/i;
+
+  if (!regex.test(value)) {
+    event.target.value = value.replace(/[^a-zA-Z0-9@gmail\.com]/g, "");
+  }
+});
+
   /**
    * Animation on scroll
    */
